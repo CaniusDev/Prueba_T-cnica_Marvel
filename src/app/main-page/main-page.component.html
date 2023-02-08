@@ -1,0 +1,37 @@
+<header class="container">
+  <a href="../index.html"><h1>Marvel api</h1></a>
+  <hr />
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Iron man..."
+    (input)="filter($event)"
+  />
+</header>
+
+<main class="row m-4">
+  <div *ngFor="let personaje of personajes" class="col-xl-4 col-sm-6 col-xs-12">
+    <div class="card my-3">
+      <img
+        src="{{ personaje.thumbnail.path }}.{{ personaje.thumbnail.extension }}"
+        class="card-img-top"
+        alt="..."
+      />
+
+      <div class="card-body">
+        <h5 class="card-title">{{ personaje.name }}</h5>
+        <p class="card-text">Fecha modificado: {{ personaje.modified }}</p>
+        <button
+          href="#"
+          class="btn btn-primary float-end"
+          (click)="btnClick(personaje.id)"
+        >
+          Detalles
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  
+</footer>

@@ -1,0 +1,50 @@
+<header class="container">
+  <a href="../index.html"><h1>Marvel api</h1></a>
+  <hr />
+</header>
+<main *ngFor="let personaje of personajes">
+    <div *ngIf="personaje.id == id" class="container col-xxl-8 px-4 py-5">
+        <div class="container col-xxl-8 px-4 py-5 border border-primary rounded details">
+            <div class="row flex-lg-row-reverse  g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="{{personaje.thumbnail.path}}.{{personaje.thumbnail.extension}}" class="d-block mx-lg-auto img-fluid border border-success rounded" alt="Bootstrap Themes">
+              </div>
+              <div class="col-lg-6 ">
+                <h1 class="display-5 fw-bold lh-1 mb-3">{{personaje.name}}</h1>
+                <p >{{personaje.description}}</p>
+                <p *ngIf="personaje.description == ''">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eaque, inventore officia nulla hic ex dignissimos error dolore, quos nisi magnam perspiciatis aliquam nesciunt harum nam architecto possimus temporibus ducimus?</p>
+                
+                <p class="lead float-end align-items-end">{{personaje.modified}}</p>
+                
+              </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<div class="row m-4">
+  <div *ngFor="let comic of comics" class="col-xl-4 col-sm-6 col-xs-12">
+    <div class="card my-3">
+      <img
+        src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}"
+        class="card-img-top"
+        alt="..."
+      />
+
+      <div class="card-body">
+        <h5 class="card-title">{{ comic.title }}</h5>
+        <p class="card-text">Fecha modificado: {{ comic.modified }}</p>        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+    
+    
